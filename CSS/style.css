@@ -12,6 +12,101 @@ body {
     color: rgb(255, 255, 255);
 }
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+/* Hamburger Menu Button */
+.navbar-toggle {
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 200;
+}
+
+.navbar-toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: #fff;
+}
+
+/* Sidebar Style */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden initially */
+    width: 250px;
+    height: 100%;
+    background-color: black;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: green;
+}
+
+/* Open the sidebar */
+.sidebar.open {
+    left: 0;
+}
+
+/* Main content */
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        display: block; /* Show the hamburger menu */
+    }
+
+    .sidebar a {
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+
+    /* Optional: Hide the top navigation bar on small screens if needed */
+    .navbar {
+        display: none; 
+    }
+
+    /* Adjust home section padding */
+    .home {
+        padding-left: 0;
+    }
+
+    .home-content {
+        padding: 20px;
+    }
+}
+
+
+
+
 .header {
     position: fixed;
     top: 0;
