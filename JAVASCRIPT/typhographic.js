@@ -24,12 +24,6 @@ var count = 0
 var INITIAL_WORD = word.innerHTML;
 var isGoing = false
 
-function toggleNavbar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.toggle('open');
-}
-
-
 function init() {
  if(isGoing) return;
  
