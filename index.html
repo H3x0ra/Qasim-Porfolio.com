@@ -13,27 +13,23 @@
 </head>
 <body>
 
-   
-    
     <canvas id="matrixCanvas"></canvas>
-                                                        <!-- Matrix -->
     <script src="JAVASCRIPT/matrix.js"></script>
 
     <header class="header">
-        <a href="#" class="logo">{Portfolio} </a>
+        <a href="#" class="logo">{Portfolio}</a>
 
         <nav class="navbar">
-            <a href="#home" style="--i:1;" class="active">Home</a>
-            <a href="#about" style="--i:2;">About</a>
-            <a href="#skill" style="--i:3;">Skills</a>
-            <a href="#project" style="--i:4;">Projects</a>
-            <a href="#contact" style="--i:5;">Contact</a>
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section id="home" class="home">
-
-        <div class="home-content" data-scroll data-scroll-speed="-5" >
+        <div class="home-content">
             <h3 class="mu">Hello, It's me</h3>
             <h1>Qasim Tawalbeh</h1>
             <h3>And I'm a <span class="pro-text">
@@ -50,21 +46,15 @@
                     });
                 </script>
             </span></h3>
-            
-            <p>  &emsp; &emsp;This portfolio highlights my passion for cybersecurity and my commitment to ethical practices. <br> <br>
-                &emsp; &emsp;I have acquired fundamental knowledge and skills in various areas of ethical hacking, 
-                allowing me to contribute to the security of organizations and individuals. <br> <br>
-                &emsp; &emsp;Hacked multiple Wifi networks that were based on WPS protocol.  
-            </p>
+            <p>This portfolio highlights my passion for cybersecurity and my commitment to ethical practices...</p>
 
             <div class="home-sci">
                 <a href="https://github.com/H3x0ra" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="https://www.linkedin.com/in/qasim-tawalbeh-a3b75522b/" target="_blank"><i class='bx bxl-linkedin'></i></a>
                 <a href="https://wa.me/962782023773" target="_blank"><i class='bx bxl-whatsapp'></i></a>
                 <a href="https://www.instagram.com/kase0m/" target="_blank"><i class='bx bxl-instagram'></i></a>
             </div>
            <a href="https://raw.githubusercontent.com/H3x0ra/Qasim-Porfolio.com/main/Qasim%20Tawalbeh.Cv.docx" class="btn-box" download="QasimTawalbeh.Cv.docx">Download CV</a>
-            
         </div>
 
         <div class="home-img">
@@ -76,8 +66,78 @@
                 </div>
             </div>
         </div>
-
     </section>
 
-</body> 
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="skills-container">
+            <h2>Skills</h2>
+            <div class="skill">
+                <h3>Brute Force Attacks</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%"></div>
+                </div>
+                <p>90%</p>
+            </div>
+            <div class="skill">
+                <h3>Linux Administration</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                </div>
+                <p>85%</p>
+            </div>
+            <div class="skill">
+                <h3>Ethical Hacking</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%"></div>
+                </div>
+                <p>80%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <h3>Network Penetration Testing Tool</h3>
+                <p>A tool to perform network device discovery and port scanning.</p>
+            </div>
+            <div class="project-card">
+                <h3>Fake Social Media Platform</h3>
+                <p>A project for cybersecurity awareness, simulating phishing attacks.</p>
+            </div>
+            <div class="project-card">
+                <h3>Red/Blue Team Cybersecurity Simulation</h3>
+                <p>Network defense simulation with Red/Blue team exercises.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out!</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script>
+        // Scroll to section functionality
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
 </html>
