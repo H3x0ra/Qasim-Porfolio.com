@@ -67,46 +67,48 @@
         }
 
         /* Mobile Navbar */
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
 
-        .hamburger .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px;
-            background-color: #fff;
-            transition: 0.3s;
-        }
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    background-color: #fff;
+    transition: 0.3s;
+}
 
-        .navbar-links {
-            display: flex;
-            gap: 20px;
-        }
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
 
-        .navbar-links.active {
-            display: block;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background-color: #222;
-            padding: 10px;
-            width: 200px;
-        }
+.navbar-links.active {
+    display: flex; /* Change from block to flex */
+    flex-direction: column;
+    align-items: flex-end; /* Align to the right */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #222;
+    padding: 10px;
+    width: 200px;
+}
 
-        @media screen and (max-width: 768px) {
-            .navbar-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
+@media screen and (max-width: 768px) {
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-end; /* Make sure items align to the right */
+    }
 
-            .hamburger {
-                display: block;
-            }
-        }
+    .hamburger {
+        display: block;
+    }
+}
 
         /* Home Section */
         .home {
