@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Qasim</title>
+
     <link rel="icon" type="image/png" href="IMAGES/sailogo.png">
     <link rel="stylesheet" href="CSS/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -43,8 +44,8 @@
         .navbar {
             list-style-type: none;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: flex-end;
+            gap: 20px;
         }
 
         .navbar a {
@@ -60,45 +61,45 @@
         }
 
         /* Mobile Navbar */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+
         .navbar-links {
             display: flex;
             gap: 20px;
         }
 
-        .hamburger {
-            display: none;
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
+        .navbar-links.active {
+            display: block;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #222;
+            padding: 10px;
+            width: 200px;
         }
 
-        /* Media query for mobile screens */
-        @media (max-width: 768px) {
+        @media screen and (max-width: 768px) {
             .navbar-links {
                 display: none;
                 flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: #222;
-                padding: 20px;
-                border-radius: 5px;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-            }
-
-            .navbar-links a {
-                margin-bottom: 15px;
-                font-size: 20px;
+                align-items: center;
             }
 
             .hamburger {
                 display: block;
             }
-        }
-
-        /* Show navbar when hamburger is clicked */
-        .navbar-links.active {
-            display: flex;
         }
 
         /* Home Section */
@@ -240,34 +241,34 @@
 </head>
 <body>
 
-    <!-- Canvas for Matrix Effect -->
     <canvas id="matrixCanvas"></canvas>
     <script src="JAVASCRIPT/matrix.js"></script>
 
     <header class="header">
         <a href="#" class="logo">{Portfolio}</a>
 
-        <nav class="navbar">
-            <!-- Hamburger Menu Icon -->
-            <div class="hamburger" id="hamburger">
-                <i class="bx bx-menu"></i>
-            </div>
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
 
-            <!-- Navbar Links -->
-            <div class="navbar-links" id="navbarLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-            </div>
+        <!-- Navbar Links -->
+        <nav class="navbar">
+            <ul class="navbar-links" id="navbarLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Home Section -->
     <section id="home" class="home">
         <div class="home-content">
             <h3 class="mu">Hello, It's me</h3>
             <h1>Qasim Tawalbeh</h1>
-            <h3>Cyber Secuirty Engineer</h3>
+            <h3>Cyber Security Engineer <span class="pro-text"></span></h3>
             <p>This portfolio highlights my passion for cybersecurity and my commitment to ethical practices...</p>
 
             <div class="home-sci">
@@ -308,16 +309,31 @@
                 </div>
                 <p>85%</p>
             </div>
+            <div class="skill">
+                <h3>Ethical Hacking</h3>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%"></div>
+                </div>
+                <p>80%</p>
+            </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Projects</h2>
+        <h2>My Projects</h2>
         <div class="project-cards">
             <div class="project-card">
-                <h3>Penetration Testing</h3>
-                <p>Conducted penetration testing on corporate networks...</p>
+                <h3>Project 1</h3>
+                <p>Description of project 1</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 2</h3>
+                <p>Description of project 2</p>
+            </div>
+            <div class="project-card">
+                <h3>Project 3</h3>
+                <p>Description of project 3</p>
             </div>
         </div>
     </section>
@@ -325,11 +341,18 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const navbarLinks = document.getElementById('navbarLinks');
-
         hamburger.addEventListener('click', () => {
             navbarLinks.classList.toggle('active');
         });
-    </script>
 
+        // Type effect for text
+        const typed = new Typed(".pro-text", {
+            strings: ["Penetration Testing", "Cyber Security", "Network Security", "Ethical Hacking"],
+            typeSpeed: 80,
+            backSpeed: 40,
+            backDelay: 1000,
+            loop: true
+        });
+    </script>
 </body>
 </html>
