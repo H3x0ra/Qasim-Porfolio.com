@@ -309,8 +309,21 @@ html {
     <script src="JAVASCRIPT/matrix.js"></script>
 
     <header class="header">
-        <a href="IMAGES/PortfolioImage.jpg" class="logo">Portfolio</a>
 
+        <a href="IMAGES/PortfolioImage.jpg" class="logo" style="
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-image: url('IMAGES/PortfolioImage.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    border: 2px solid green;
+    box-shadow: 0 0 5px green, 0 0 10px green;
+    transition: transform 0.3s ease;
+"></a>
+
+        
         <!-- Hamburger Icon -->
         <div class="hamburger" id="hamburger">
             <div class="bar"></div>
