@@ -179,8 +179,8 @@ body {
 .home-img .glowing-circle::after {
     content: '';
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: 238px;
+    height: 300px;
     background-color: black;
     border-radius: 50%;
 }
@@ -209,8 +209,8 @@ body {
 
 .glowing-circle .image {
     position: relative;
-    width: 380px;
-    height: 380px;
+    width: 100px;
+    height: 263px;
     border-radius: 50%;
     z-index: 1;
 }
