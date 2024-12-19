@@ -300,6 +300,53 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+        /* Cv Section Styling */
+.cv-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cv-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Container for button and image */
+.cv-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+/* CV Button Styling */
+.cv-button {
+    padding: 15px 30px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cv-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Profile Image Styling */
+.cv-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid green;
+    box-shadow: 0 0 10px green;
+}
+
 </style>
     
 </head>
@@ -367,35 +414,17 @@ html {
                     </div>
             </section>
                                 
-        <!-- Cv Section -->
-     <!-- Projects Section -->
-    <section id="cv"  style="margin-top:5cm">
-        <h2>My Cv</h2>
-        <div class="project-cards">
-            <div class="project-card" >
-             <a href="https://raw.githubusercontent.com/H3x0ra/Qasim-Porfolio.com/main/Qasim%20Tawalbeh.Cv.docx" class="btn-box" download="QasimTawalbeh.Cv.docx">Download CV</a>
-            </div>
-             <div class="project-cards"> 
-              <img src="IMAGES/PortfolioImage.jpg" alt="Qasim Tawalbeh" style="margin-right: 289px;width: 150px; height: 150px; border-radius: 50%; border: 2px solid green; box-shadow: 0 0 10px green;margin-top: 20px; ">
-            </div>
-
-            
+      <!-- Cv Section -->
+<section id="cv" class="cv-section">
+    <h2>Download CV</h2>
+    <div class="cv-content">
+        <a href="https://raw.githubusercontent.com/H3x0ra/Qasim-Porfolio.com/main/Qasim%20Tawalbeh.Cv.docx" class="cv-button" download="QasimTawalbeh.Cv.docx">Download CV</a>
+        <div class="cv-image">
+            <img src="IMAGES/PortfolioImage.jpg" alt="Qasim Tawalbeh">
         </div>
-    </section>
+    </div>
+</section>
 
-     <section id="cv"  style="margin-top:1cm">
-                <h2>Download Cv</h2>
-        <div class="project-cards">
-            <div>
-                 <a href="https://raw.githubusercontent.com/H3x0ra/Qasim-Porfolio.com/main/Qasim%20Tawalbeh.Cv.docx" class="btn-box" download="QasimTawalbeh.Cv.docx">Download CV</a>
-            </div>     
-            <!-- Add Image Directly Below the CV Button -->
-            <div> 
-              <img src="IMAGES/PortfolioImage.jpg" alt="Qasim Tawalbeh" style="margin-right: 289px;width: 150px; height: 150px; border-radius: 50%; border: 2px solid green; box-shadow: 0 0 10px green;margin-top: 20px; ">
-            </div>
-
-            </div>
-        </section>
 
         
 
