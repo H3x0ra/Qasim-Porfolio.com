@@ -350,6 +350,7 @@ html {
 
 <!-- Add this to your CSS -->
 /* Certificate Section Styling */
+/* Certificate Section Styling */
 #certificates {
     padding: 60px 20px;
     text-align: center;
@@ -389,32 +390,29 @@ html {
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
+.nav-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 .nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     background: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
-    padding: 20px;
-    font-size: 24px;
+    padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    z-index: 1000;
     transition: all 0.3s ease;
-    border-radius: 50%;
+    border-radius: 5px;
+    text-transform: uppercase;
 }
 
 .nav-btn:hover {
     background: #00ff00;
     box-shadow: 0 0 15px #00ff00;
-}
-
-.prev-btn {
-    left: 50px;
-}
-
-.next-btn {
-    right: 50px;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -427,11 +425,14 @@ html {
         max-height: 380px;
     }
     
+    .nav-buttons {
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
     .nav-btn {
-        padding: 15px;
-        font-size: 20px;
-        left: 10px;
-        right: 10px;
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
 </style>
@@ -504,29 +505,29 @@ html {
                                 
 
    <!-- Certificate Section -->
+<!-- Certificate Section -->
 <section id="certificates">
     <h2 style="color: #00ff00; margin-bottom: 30px;">Certifications</h2>
     <div class="certificates-container">
-        <button class="nav-btn prev-btn">❮</button>
-        
         <!-- Certificate Images -->
         <div class="certificate-card active">
             <img src="IMAGES/Linux.jpg" alt="Linux Certification">
         </div>
-        
         <div class="certificate-card">
             <img src="IMAGES/LRSA.jpg" alt="LRSA Certification">
         </div>
-        
         <div class="certificate-card">
             <img src="IMAGES/LRPA.jpg" alt="LRPA Certification">
         </div>
-        
         <div class="certificate-card">
             <img src="IMAGES/CyberX.jpg" alt="CyberX Certification">
         </div>
-
-        <button class="nav-btn next-btn">❯</button>
+    </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+        <button class="nav-btn prev-btn">Previous</button>
+        <button class="nav-btn next-btn">Next</button>
     </div>
 </section>
         
@@ -603,40 +604,43 @@ html {
         });
 
         // Add this JavaScript for certicate
+// Slider Functionality
 let currentCert = 0;
 const certificates = document.querySelectorAll('.certificate-card');
 let certInterval;
 
-function showCertificate(direction = 'next') {
+function showCertificate(direction) {
     certificates[currentCert].classList.remove('active');
-    
     if(direction === 'next') {
         currentCert = (currentCert + 1) % certificates.length;
     } else {
         currentCert = (currentCert - 1 + certificates.length) % certificates.length;
     }
-    
     certificates[currentCert].classList.add('active');
-    
-    // Reset automatic timer
-    clearInterval(certInterval);
-    certInterval = setInterval(() => showCertificate('next'), 5000);
 }
 
-// Initialize automatic cycling
+// Auto-advance every 5 seconds
 certInterval = setInterval(() => showCertificate('next'), 5000);
 
 // Button controls
-document.querySelector('.prev-btn').addEventListener('click', () => showCertificate('prev'));
-document.querySelector('.next-btn').addEventListener('click', () => showCertificate('next'));
+document.querySelector('.prev-btn').addEventListener('click', () => {
+    clearInterval(certInterval);
+    showCertificate('prev');
+    certInterval = setInterval(() => showCertificate('next'), 5000);
+});
 
-// Hover pause
-const container = document.querySelector('.certificates-container');
-container.addEventListener('mouseenter', () => {
+document.querySelector('.next-btn').addEventListener('click', () => {
+    clearInterval(certInterval);
+    showCertificate('next');
+    certInterval = setInterval(() => showCertificate('next'), 5000);
+});
+
+// Pause on hover
+document.querySelector('.certificates-container').addEventListener('mouseenter', () => {
     clearInterval(certInterval);
 });
 
-container.addEventListener('mouseleave', () => {
+document.querySelector('.certificates-container').addEventListener('mouseleave', () => {
     certInterval = setInterval(() => showCertificate('next'), 5000);
 });
         
