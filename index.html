@@ -349,16 +349,18 @@ html {
  }
 
 <!-- Add this to your CSS -->
+/* Updated CSS for Certificates Section */
 #certificates {
     padding: 60px 20px;
     text-align: center;
+    position: relative;
 }
 
 .certificates-container {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    height: 500px;
+    min-height: 400px;
 }
 
 .certificate-card {
@@ -370,6 +372,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden; /* Added to contain images */
 }
 
 .certificate-card.active {
@@ -377,8 +380,10 @@ html {
 }
 
 .certificate-card img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 90%; /* Adjusted for consistent sizing */
+    height: auto;
+    max-height: 400px;
+    object-fit: contain; /* Ensures images maintain aspect ratio */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
 }
@@ -390,10 +395,10 @@ html {
     background: rgba(0, 255, 0, 0.3);
     border: none;
     color: white;
-    padding: 15px;
+    padding: 15px 20px;
     cursor: pointer;
     border-radius: 5px;
-    z-index: 100;
+    z-index: 1000; /* Increased z-index */
     transition: all 0.3s ease;
 }
 
@@ -403,11 +408,25 @@ html {
 }
 
 .prev-btn {
-    left: 20px;
+    left: 5px;
 }
 
 .next-btn {
-    right: 20px;
+    right: 5px;
+}
+
+@media (max-width: 768px) {
+    .certificates-container {
+        min-height: 300px;
+    }
+    
+    .certificate-card img {
+        max-height: 300px;
+    }
+    
+    .nav-btn {
+        padding: 10px 15px;
+    }
 }
 </style>
     
@@ -478,7 +497,7 @@ html {
             </section>
                                 
 
-     <!-- Certificate-->
+    <!-- Certificate Section -->
 <section id="certificates">
     <h2>Certifications</h2>
     <div class="certificates-container">
