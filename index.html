@@ -349,18 +349,19 @@ html {
  }
 
 <!-- Add this to your CSS -->
-/* Updated CSS for Certificates Section */
+/* Certificate Section Styling */
 #certificates {
     padding: 60px 20px;
     text-align: center;
     position: relative;
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .certificates-container {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    min-height: 400px;
+    min-height: 600px;
 }
 
 .certificate-card {
@@ -368,11 +369,10 @@ html {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Added to contain images */
 }
 
 .certificate-card.active {
@@ -380,52 +380,58 @@ html {
 }
 
 .certificate-card img {
-    width: 90%; /* Adjusted for consistent sizing */
+    width: auto;
     height: auto;
-    max-height: 400px;
-    object-fit: contain; /* Ensures images maintain aspect ratio */
+    max-width: 80%;
+    max-height: 550px;
+    border: 3px solid #00ff00;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 
 .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0, 255, 0, 0.3);
+    background: rgba(0, 255, 0, 0.5);
     border: none;
     color: white;
-    padding: 15px 20px;
+    padding: 20px;
+    font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
-    z-index: 1000; /* Increased z-index */
+    z-index: 1000;
     transition: all 0.3s ease;
+    border-radius: 50%;
 }
 
 .nav-btn:hover {
-    background: green;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    background: #00ff00;
+    box-shadow: 0 0 15px #00ff00;
 }
 
 .prev-btn {
-    left: 5px;
+    left: 50px;
 }
 
 .next-btn {
-    right: 5px;
+    right: 50px;
 }
 
 @media (max-width: 768px) {
     .certificates-container {
-        min-height: 300px;
+        min-height: 400px;
     }
     
     .certificate-card img {
-        max-height: 300px;
+        max-width: 90%;
+        max-height: 380px;
     }
     
     .nav-btn {
-        padding: 10px 15px;
+        padding: 15px;
+        font-size: 20px;
+        left: 10px;
+        right: 10px;
     }
 }
 </style>
@@ -497,23 +503,29 @@ html {
             </section>
                                 
 
-    <!-- Certificate Section -->
+   <!-- Certificate Section -->
 <section id="certificates">
-    <h2>Certifications</h2>
+    <h2 style="color: #00ff00; margin-bottom: 30px;">Certifications</h2>
     <div class="certificates-container">
         <button class="nav-btn prev-btn">❮</button>
+        
+        <!-- Certificate Images -->
         <div class="certificate-card active">
-            <img src="IMAGES/Linux.jpg" alt="Linux Certificate">
+            <img src="IMAGES/Linux.jpg" alt="Linux Certification">
         </div>
+        
         <div class="certificate-card">
-            <img src="IMAGES/LRSA.jpg" alt="LRSA Certificate">
+            <img src="IMAGES/LRSA.jpg" alt="LRSA Certification">
         </div>
+        
         <div class="certificate-card">
-            <img src="IMAGES/LRPA.jpg" alt="LRPA Certificate">
+            <img src="IMAGES/LRPA.jpg" alt="LRPA Certification">
         </div>
+        
         <div class="certificate-card">
-            <img src="IMAGES/CyberX.jpg" alt="CyberX Certificate">
+            <img src="IMAGES/CyberX.jpg" alt="CyberX Certification">
         </div>
+
         <button class="nav-btn next-btn">❯</button>
     </div>
 </section>
