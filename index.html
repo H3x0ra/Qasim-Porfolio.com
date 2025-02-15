@@ -348,6 +348,7 @@ html {
     border: 2px solid green;
  }
 
+<!-- Add this to your CSS -->
 #certificates {
     padding: 60px 20px;
     text-align: center;
@@ -382,11 +383,32 @@ html {
     box-shadow: 0 4px 8px rgba(0, 255, 0, 0.3);
 }
 
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    20%, 80% { opacity: 1; }
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 255, 0, 0.3);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 100;
+    transition: all 0.3s ease;
 }
 
+.nav-btn:hover {
+    background: green;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
 </style>
     
 </head>
@@ -460,20 +482,22 @@ html {
 <section id="certificates">
     <h2>Certifications</h2>
     <div class="certificates-container">
+        <button class="nav-btn prev-btn">❮</button>
         <div class="certificate-card active">
-            <img src="IMAGES/Linux.jpg" alt="Certificate 1">
+            <img src="IMAGES/Linux.jpg" alt="Linux Certificate">
         </div>
         <div class="certificate-card">
-            <img src="IMAGES/LRSA.jpg" alt="Certificate 2">
+            <img src="IMAGES/LRSA.jpg" alt="LRSA Certificate">
         </div>
         <div class="certificate-card">
-            <img src="IMAGES/LRPA.jpg" alt="Certificate 3">
+            <img src="IMAGES/LRPA.jpg" alt="LRPA Certificate">
         </div>
-         <div class="certificate-card">
-            <img src="IMAGES/CyberX.jpg" alt="Certificate 3">
+        <div class="certificate-card">
+            <img src="IMAGES/CyberX.jpg" alt="CyberX Certificate">
         </div>
+        <button class="nav-btn next-btn">❯</button>
     </div>
-    </section>
+</section>
         
 
 
@@ -547,29 +571,43 @@ html {
             loop: true
         });
 
-        // Add this JavaScript Certicte
+        // Add this JavaScript for certicate
 let currentCert = 0;
 const certificates = document.querySelectorAll('.certificate-card');
+let certInterval;
 
-function showNextCertificate() {
+function showCertificate(direction = 'next') {
     certificates[currentCert].classList.remove('active');
-    currentCert = (currentCert + 1) % certificates.length;
+    
+    if(direction === 'next') {
+        currentCert = (currentCert + 1) % certificates.length;
+    } else {
+        currentCert = (currentCert - 1 + certificates.length) % certificates.length;
+    }
+    
     certificates[currentCert].classList.add('active');
+    
+    // Reset automatic timer
+    clearInterval(certInterval);
+    certInterval = setInterval(() => showCertificate('next'), 5000);
 }
 
-// Start automatic cycling
-setInterval(showNextCertificate, 5000);
+// Initialize automatic cycling
+certInterval = setInterval(() => showCertificate('next'), 5000);
 
-// Optional: Pause on hover
+// Button controls
+document.querySelector('.prev-btn').addEventListener('click', () => showCertificate('prev'));
+document.querySelector('.next-btn').addEventListener('click', () => showCertificate('next'));
+
+// Hover pause
 const container = document.querySelector('.certificates-container');
 container.addEventListener('mouseenter', () => {
     clearInterval(certInterval);
 });
 
 container.addEventListener('mouseleave', () => {
-    certInterval = setInterval(showNextCertificate, 5000);
+    certInterval = setInterval(() => showCertificate('next'), 5000);
 });
-
         
     </script>
 </body>
