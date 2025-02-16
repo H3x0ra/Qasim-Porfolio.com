@@ -103,32 +103,36 @@ li::marker {
     color: #1e90ff;
 }
 
-/* Media query for mobile screens */
+/* Modified Mobile Menu CSS */
 @media (max-width: 768px) {
     .navbar-links {
         display: none;
         flex-direction: column;
         position: fixed;
-        top: 60px;
+        top: 70px; /* Adjusted to match header height */
         left: 0;
         width: 100%;
+        height: calc(100vh - 70px);
         background-color: #1e1e1e;
         padding: 20px 0;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-        z-index: 99;
+        z-index: 100;
+        overflow-y: auto;
+    }
+
+    .navbar-links.active {
+        display: flex;
     }
 
     .navbar-links a {
-        margin: 10px 20px;
+        margin: 15px 20px;
         font-size: 20px;
     }
 
     .hamburger {
         display: block;
-    }
-
-    .navbar-links.active {
-        display: flex;
+        position: static; /* Remove absolute positioning */
+        transform: translateY(0);
     }
 }
 
@@ -887,22 +891,22 @@ document.querySelector('.certificates-container').addEventListener('mouseenter',
 document.querySelector('.certificates-container').addEventListener('mouseleave', () => {
     certInterval = setInterval(() => showCertificate('next'), 5000);
 });
-    
-    </script>
-<!-- JavaScript for Hamburger Menu Toggle -->
-<script>
+
+        
+   // <!-- JavaScript for Hamburger Menu Toggle -->
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navbarLinks = document.querySelector('.navbar-links');
 
     // Toggle mobile menu
-    hamburger.addEventListener('click', function() {
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
         navbarLinks.classList.toggle('active');
     });
 
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('.navbar') && navbarLinks.classList.contains('active')) {
+        if (!event.target.closest('.navbar-links') && !event.target.closest('.hamburger')) {
             navbarLinks.classList.remove('active');
         }
     });
@@ -914,7 +918,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-</script>
+    </script>
+
     
 </body>
 </html>
