@@ -208,6 +208,43 @@ body {
 }
 
 /* Skills Section */
+        /* Add to existing skills CSS */
+.skill-category {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.category-title {
+    color: #00ff00;
+    font-size: 1.8em;
+    margin: 25px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00ff00;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.skill h4 {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.progress {
+    background: rgba(255, 255, 255, 0.1);
+    height: 12px;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #00ff00, #1e90ff);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.skill p {
+    color: #00ff00;
+    font-weight: bold;
+    margin-top: 8px;
+}
 #skills {
     padding: 60px 20px;
 }
@@ -716,32 +753,90 @@ html {
 
 
     <!-- Skills Section -->
-    <section id="skills">
-        <div class="skills-container">
-            <h2>Skills</h2>
+<section id="skills">
+    <div class="skills-container">
+        <h2>Technical Skills</h2>
+        
+        <!-- Offensive Security -->
+        <div class="skill-category">
+            <h3 class="category-title">Offensive Security</h3>
             <div class="skill">
-                <h3>Brute Force Attacks</h3>
+                <h4>Penetration Testing</h4>
                 <div class="progress">
                     <div class="progress-bar" style="width: 90%"></div>
                 </div>
                 <p>90%</p>
             </div>
             <div class="skill">
-                <h3>Linux Administration</h3>
+                <h4>Network Vulnerability Assessment</h4>
                 <div class="progress">
                     <div class="progress-bar" style="width: 85%"></div>
                 </div>
                 <p>85%</p>
             </div>
             <div class="skill">
-                <h3>Ethical Hacking</h3>
+                <h4>Active Directory Exploitation</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 88%"></div>
+                </div>
+                <p>88%</p>
+            </div>
+        </div>
+
+        <!-- Defensive Security -->
+        <div class="skill-category">
+            <h3 class="category-title">Defensive Security</h3>
+            <div class="skill">
+                <h4>SIEM Implementation (Splunk)</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 80%"></div>
+                </div>
+                <p>80%</p>
+            </div>
+            <div class="skill">
+                <h4>Incident Response</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div>
+                <p>75%</p>
+            </div>
+            <div class="skill">
+                <h4>Security Hardening</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 82%"></div>
+                </div>
+                <p>82%</p>
+            </div>
+        </div>
+
+        <!-- Tools & Technologies -->
+        <div class="skill-category">
+            <h3 class="category-title">Tools & Technologies</h3>
+            <div class="skill">
+                <h4>Metasploit Framework</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 85%"></div>
+                </div>
+                <p>85%</p>
+            </div>
+            <div class="skill">
+                <h4>Nmap & Network Scanning</h4>
+                <div class="progress">
+                    <div class="progress-bar" style="width: 90%"></div>
+                </div>
+                <p>90%</p>
+            </div>
+            <div class="skill">
+                <h4>Bash/Python Scripting</h4>
                 <div class="progress">
                     <div class="progress-bar" style="width: 80%"></div>
                 </div>
                 <p>80%</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     
 
