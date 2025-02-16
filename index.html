@@ -38,19 +38,8 @@ body {
 
 .header .logo {
     font-size: 24px;
-    color: #00ff00; /* Green text */
+    color: #7099B2; /* Updated soft blue logo color */
     text-decoration: none;
-}
-
-li::marker {
-    content: none;
-}
-
-.navbar {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .navbar a {
@@ -62,7 +51,7 @@ li::marker {
 
 .navbar a:hover,
 .navbar a.active {
-    color: #1e90ff; /* Blue on hover */
+    color: #7099B2; /* Updated hover color to soft blue */
 }
 
 /* Hamburger Icon */
@@ -100,35 +89,7 @@ li::marker {
 
 .navbar-links a:hover,
 .navbar-links a.active {
-    color: #1e90ff;
-}
-
-/* Media query for mobile screens */
-@media (max-width: 768px) {
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Below the header */
-        right: 20px;
-        background-color: #1e1e1e;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-    }
-
-    .navbar-links a {
-        margin-bottom: 15px;
-        font-size: 20px;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
+    color: #7099B2; /* Updated hover color to soft blue */
 }
 
 /* Home Section */
@@ -149,7 +110,7 @@ li::marker {
 
 .home-content .pro-text {
     font-weight: bold;
-    color: #1e90ff;
+    color: #7099B2; /* Soft blue text */
 }
 
 .home-content p {
@@ -169,42 +130,7 @@ li::marker {
 }
 
 .home-sci a:hover {
-    color: #1e90ff;
-}
-
-.home-img {
-    position: relative;
-    margin-right: -38px;
-}
-
-.glowing-circle {
-    position: relative;
-    display: inline-block;
-}
-
-.glowing-circle span {
-    position: absolute;
-    border-radius: 50%;
-    background: #1e90ff;
-    animation: glowing 1.5s ease-in-out infinite;
-}
-
-.glowing-circle span:nth-child(1) {
-    width: 120px;
-    height: 120px;
-    animation-delay: 0s;
-}
-
-.glowing-circle span:nth-child(2) {
-    width: 160px;
-    height: 160px;
-    animation-delay: 0.5s;
-}
-
-.image img {
-    width: 241px;
-    height: 234px;
-    border-radius: 50%;
+    color: #7099B2; /* Updated hover color */
 }
 
 /* Skills Section */
@@ -215,12 +141,12 @@ li::marker {
 }
 
 .category-title {
-    color: #00ff00; /* Green title */
+    color: #7099B2; /* Soft blue title */
     font-size: 1.8em;
     margin: 25px 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid #00ff00;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    border-bottom: 2px solid #7099B2; /* Soft blue border */
+    text-shadow: 0 0 10px rgba(112, 153, 178, 0.3);
 }
 
 .skill h4 {
@@ -235,12 +161,11 @@ li::marker {
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, #00ff00, #1e90ff);
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    background: #7099B2; /* Soft blue progress bar */
 }
 
 .skill p {
-    color: #00ff00;
+    color: #7099B2; /* Soft blue text */
     font-weight: bold;
     margin-top: 8px;
 }
@@ -281,7 +206,7 @@ li::marker {
 
 .progress-bar {
     height: 100%;
-    background-color: #1e90ff;
+    background-color: #7099B2; /* Soft blue progress bar */
     border-radius: 5px;
 }
 
@@ -298,11 +223,11 @@ li::marker {
 }
 
 #projects h2 {
-    color: #00ff00; /* Green text */
+    color: #7099B2; /* Soft blue text for project titles */
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 50px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-shadow: 0 0 10px rgba(112, 153, 178, 0.5);
 }
 
 .project-cards {
@@ -315,7 +240,7 @@ li::marker {
 
 .project-card {
     background: rgba(0, 20, 0, 0.8);
-    border: 1px solid #00ff00; /* Green border */
+    border: 1px solid #7099B2; /* Soft blue border for projects */
     border-radius: 10px;
     padding: 25px;
     transition: all 0.3s ease;
@@ -325,23 +250,7 @@ li::marker {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, #00ff00, transparent);
-    animation: animate 6s linear infinite;
-}
-
-@keyframes animate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    box-shadow: 0 0 25px rgba(112, 153, 178, 0.3);
 }
 
 .project-card-content {
@@ -353,7 +262,7 @@ li::marker {
 }
 
 .project-card h3 {
-    color: #00ff00;
+    color: #7099B2; /* Soft blue text */
     font-size: 1.5em;
     margin-bottom: 15px;
 }
@@ -372,8 +281,8 @@ li::marker {
 }
 
 .tech-tag {
-    background: rgba(0, 255, 0, 0.2);
-    color: #00ff00;
+    background: rgba(112, 153, 178, 0.2);
+    color: #7099B2; /* Soft blue tech tags */
     padding: 5px 10px;
     border-radius: 15px;
     font-size: 0.9em;
@@ -386,7 +295,7 @@ li::marker {
 }
 
 .project-link {
-    background: #00ff00; /* Green buttons */
+    background: #7099B2; /* Soft blue button */
     color: #000;
     padding: 8px 20px;
     border-radius: 5px;
@@ -397,18 +306,8 @@ li::marker {
 
 .project-link:hover {
     background: #000;
-    color: #00ff00;
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-    .project-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-card {
-        margin: 0 10px;
-    }
+    color: #7099B2; /* Soft blue text on hover */
+    box-shadow: 0 0 15px rgba(112, 153, 178, 0.5);
 }
 
 /* Smooth Scroll */
@@ -440,7 +339,7 @@ html {
 /* CV Button Styling */
 .cv-button {
     padding: 15px 30px;
-    background-color: #1e90ff; /* Blue background */
+    background-color: #7099B2; /* Soft blue button */
     color: white;
     text-decoration: none;
     font-size: 18px;
@@ -459,7 +358,7 @@ html {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid green;
+    border: 2px solid #7099B2; /* Soft blue border */
 }
 
 /* Certificate Section Styling */
@@ -497,9 +396,9 @@ html {
     height: auto;
     max-width: 80%;
     max-height: 550px;
-    border: 3px solid #00ff00;
+    border: 3px solid #7099B2; /* Soft blue border for certificates */
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 20px rgba(112, 153, 178, 0.3);
 }
 
 .nav-buttons {
@@ -510,7 +409,7 @@ html {
 }
 
 .nav-btn {
-    background: rgba(0, 255, 0, 0.5);
+    background: rgba(112, 153, 178, 0.5);
     border: none;
     color: white;
     padding: 10px 20px;
@@ -522,8 +421,8 @@ html {
 }
 
 .nav-btn:hover {
-    background: #00ff00;
-    box-shadow: 0 0 15px #00ff00;
+    background: #7099B2;
+    box-shadow: 0 0 15px #7099B2;
     transform: scale(1.05);
 }
 
