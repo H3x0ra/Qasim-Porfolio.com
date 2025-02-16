@@ -256,45 +256,122 @@ body {
 
 /* Projects Section */
 #projects {
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background: rgba(0, 0, 0, 0.9);
 }
 
 #projects h2 {
+    color: #00ff00;
+    font-size: 2.5em;
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
 }
 
 .project-cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
-    background-color: #555;
-    width: 300px;
-    padding: 20px;
+    background: rgba(0, 20, 0, 0.8);
+    border: 1px solid #00ff00;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, #00ff00, transparent);
+    animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.project-card-content {
+    position: relative;
+    background: #000;
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
 }
 
 .project-card h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+    color: #00ff00;
+    font-size: 1.5em;
+    margin-bottom: 15px;
 }
 
 .project-card p {
-    font-size: 16px;
-    color: #ccc;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.tech-tag {
+    background: rgba(0, 255, 0, 0.2);
+    color: #00ff00;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.project-link {
+    background: #00ff00;
+    color: #000;
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    background: #000;
+    color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        margin: 0 10px;
+    }
 }
 
 /* Smooth Scroll */
@@ -531,6 +608,64 @@ html {
         <button class="nav-btn next-btn">Next</button>
     </div>
 </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects">
+    <h2>My Projects</h2>
+    <div class="project-cards">
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-card-content">
+                <h3>Network Security Analyzer</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scapy</span>
+                    <span class="tech-tag">Wireshark</span>
+                </div>
+                <p>A real-time network traffic analysis tool that detects suspicious patterns and potential intrusions.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourrepo" class="project-link" target="_blank">View Code</a>
+                    <a href="#" class="project-link">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-card-content">
+                <h3>Password Strength Auditor</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Hashcat</span>
+                    <span class="tech-tag">Cryptography</span>
+                </div>
+                <p>Advanced password auditing system with brute-force detection and encryption analysis.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourrepo" class="project-link" target="_blank">View Code</a>
+                    <a href="#" class="project-link">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-card-content">
+                <h3>Vulnerability Scanner</h3>
+                <div class="tech-stack">
+                    <span class="tech-tag">Bash</span>
+                    <span class="tech-tag">Nmap</span>
+                    <span class="tech-tag">Metasploit</span>
+                </div>
+                <p>Automated system scanning for vulnerabilities and penetration testing framework integration.</p>
+                <div class="project-links">
+                    <a href="https://github.com/yourrepo" class="project-link" target="_blank">View Code</a>
+                    <a href="#" class="project-link">Live Demo</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         
 
 
@@ -562,24 +697,7 @@ html {
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project-cards">
-            <div class="project-card">
-                <h3>Project 1</h3>
-                <p>Description of project 1</p>
-            </div>
-            <div class="project-card">
-                <h3>Project 2</h3>
-                <p>Description of project 2</p>
-            </div>
-            <div class="project-card">
-                <h3>Project 3</h3>
-                <p>Description of project 3</p>
-            </div>
-        </div>
-    </section>
+    
 
 
 
