@@ -16,9 +16,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* No marker styling is applied */
 }
 
+/* Remove list markers for all UL and LI elements */
+ul, li {
+    list-style: none;
+}
+
+/* Body */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -28,12 +33,11 @@ body {
 
 /* Header */
 .header {
-    position: relative; /* Changed from fixed to relative so it scrolls */
+    position: relative; /* Not fixed so it scrolls */
     width: 100%;
     background-color: #1e1e1e;
     padding: 20px;
 }
-
 .header .logo {
     font-size: 24px;
     color: #7099B2;
@@ -46,14 +50,12 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-
 .navbar a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
-
 .navbar a:hover,
 .navbar a.active {
     color: #7099B2;
@@ -69,7 +71,6 @@ body {
     top: 20px;
     right: 20px;
 }
-
 .hamburger .bar {
     width: 30px;
     height: 3px;
@@ -83,14 +84,12 @@ body {
     display: flex;
     gap: 20px;
 }
-
 .navbar-links a {
     color: #fff;
     text-decoration: none;
     font-size: 18px;
     transition: color 0.3s ease;
 }
-
 .navbar-links a:hover,
 .navbar-links a.active {
     color: #7099B2;
@@ -102,15 +101,16 @@ body {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Below the header */
-        right: 0;
+        top: 100%;  /* directly below the header */
+        left: 0;
         width: 100%;
         background-color: #1e1e1e;
-        padding: 20px 0;
+        padding: 10px 0;
         text-align: center;
+        z-index: 10;
     }
     .navbar-links a {
-        margin-bottom: 15px;
+        margin: 10px 0;
         font-size: 20px;
     }
     .hamburger {
@@ -127,70 +127,57 @@ body {
     justify-content: space-between;
     padding: 80px 20px;
 }
-
 .home-content {
     max-width: 600px;
 }
-
 .home-content h1 {
     font-size: 48px;
     margin-bottom: 10px;
 }
-
 .home-content .pro-text {
     font-weight: bold;
     color: #7099B2;
 }
-
 .home-content p {
     margin: 20px 0;
 }
-
 .home-sci {
     display: flex;
     gap: 15px;
     margin-top: 20px;
 }
-
 .home-sci a {
     font-size: 24px;
     color: #fff;
     transition: color 0.3s ease;
 }
-
 .home-sci a:hover {
     color: #7099B2;
 }
-
 .home-img {
     position: relative;
     margin-right: -38px;
 }
-
 .glowing-circle {
     position: relative;
     display: inline-block;
 }
-
 .glowing-circle span {
     position: absolute;
     border-radius: 50%;
     background: #7099B2;
     animation: glowing 1.5s ease-in-out infinite;
 }
-
 .glowing-circle span:nth-child(1) {
     width: 120px;
     height: 120px;
     animation-delay: 0s;
 }
-
 .glowing-circle span:nth-child(2) {
     width: 160px;
     height: 160px;
     animation-delay: 0.5s;
 }
-
 .image img {
     width: 241px;
     height: 234px;
@@ -203,7 +190,6 @@ body {
     width: 100%;
     max-width: 800px;
 }
-
 .category-title {
     color: #7099B2;
     font-size: 1.8em;
@@ -212,55 +198,45 @@ body {
     border-bottom: 2px solid #7099B2;
     text-shadow: 0 0 10px rgba(112, 153, 178, 0.3);
 }
-
 .skill h4 {
     font-size: 1.2em;
     color: #fff;
     margin-bottom: 5px;
 }
-
 .progress {
     background: rgba(255, 255, 255, 0.1);
     height: 12px;
 }
-
 .progress-bar {
     background: #7099B2;
     box-shadow: 0 0 10px rgba(112, 153, 178, 0.3);
 }
-
 .skill p {
     color: #7099B2;
     font-weight: bold;
     margin-top: 8px;
 }
-
 #skills {
     padding: 60px 20px;
 }
-
 #skills h2 {
     text-align: center;
     font-size: 36px;
     margin-bottom: 40px;
 }
-
 .skills-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .skill {
     width: 80%;
     max-width: 600px;
     margin-bottom: 20px;
 }
-
 .skill h3 {
     font-size: 24px;
 }
-
 .progress {
     width: 100%;
     height: 10px;
@@ -268,13 +244,11 @@ body {
     border-radius: 5px;
     margin-top: 5px;
 }
-
 .progress-bar {
     height: 100%;
     background-color: #7099B2;
     border-radius: 5px;
 }
-
 .skill p {
     text-align: right;
     font-size: 14px;
@@ -286,7 +260,6 @@ body {
     padding: 80px 20px;
     background: rgba(0, 0, 0, 0.9);
 }
-
 #projects h2 {
     color: #7099B2;
     font-size: 2.5em;
@@ -294,7 +267,6 @@ body {
     margin-bottom: 50px;
     text-shadow: 0 0 10px rgba(112, 153, 178, 0.5);
 }
-
 .project-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -302,7 +274,6 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .project-card {
     background: rgba(0, 20, 0, 0.8);
     border: 1px solid #7099B2;
@@ -312,12 +283,10 @@ body {
     position: relative;
     overflow: hidden;
 }
-
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 25px rgba(112, 153, 178, 0.3);
 }
-
 .project-card-content {
     position: relative;
     background: #363131;
@@ -325,26 +294,22 @@ body {
     border-radius: 8px;
     height: 100%;
 }
-
 .project-card h3 {
     color: #7099B2;
     font-size: 1.5em;
     margin-bottom: 15px;
 }
-
 .project-card p {
     color: #fff;
     line-height: 1.6;
     margin-bottom: 20px;
 }
-
 .tech-stack {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-bottom: 15px;
 }
-
 .tech-tag {
     background: rgba(112, 153, 178, 0.2);
     color: #7099B2;
@@ -352,13 +317,11 @@ body {
     border-radius: 15px;
     font-size: 0.9em;
 }
-
 .project-links {
     display: flex;
     gap: 15px;
     margin-top: auto;
 }
-
 .project-link {
     background: #7099B2;
     color: #000;
@@ -368,7 +331,6 @@ body {
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
 .project-link:hover {
     background: #000;
     color: #7099B2;
@@ -380,28 +342,23 @@ html {
     scroll-behavior: smooth;
 }
 
-/* CV Section Styling */
+/* CV Section */
 .cv-section {
     padding: 60px 20px;
     text-align: center;
     margin-top: -4cm;
 }
-
 .cv-section h2 {
     font-size: 36px;
     margin-bottom: 40px;
     color: #fff;
 }
-
-/* Container for button and image */
 .cv-content {
     display: flex;
     justify-content: center;
     gap: 20px;
     align-items: center;
 }
-
-/* CV Button Styling */
 .cv-button {
     padding: 15px 30px;
     background-color: #7099B2;
@@ -409,16 +366,13 @@ html {
     text-decoration: none;
     font-size: 18px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     transition: background-color 0.3s, transform 0.3s;
 }
-
 .cv-button:hover {
     background-color: #45a049;
     transform: scale(1.05);
 }
-
-/* Profile Image Styling */
 .cv-image img {
     width: 150px;
     height: 150px;
@@ -426,21 +380,19 @@ html {
     border: 2px solid #7099B2;
 }
 
-/* Certificate Section Styling */
+/* Certificates Section */
 #certificates {
     padding: 60px 20px;
     text-align: center;
     position: relative;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0,0,0,0.8);
 }
-
 .certificates-container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     min-height: 600px;
 }
-
 .certificate-card {
     position: absolute;
     width: 100%;
@@ -451,11 +403,9 @@ html {
     justify-content: center;
     align-items: center;
 }
-
 .certificate-card.active {
     opacity: 1;
 }
-
 .certificate-card img {
     width: auto;
     height: auto;
@@ -465,14 +415,12 @@ html {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(112, 153, 178, 0.3);
 }
-
 .nav-buttons {
     margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-
 .nav-btn {
     background: rgba(112, 153, 178, 0.5);
     border: none;
@@ -484,13 +432,11 @@ html {
     border-radius: 5px;
     text-transform: uppercase;
 }
-
 .nav-btn:hover {
     background: #7099B2;
     box-shadow: 0 0 15px #7099B2;
     transform: scale(1.05);
 }
-
 @media (max-width: 768px) {
     .certificates-container {
         min-height: 400px;
@@ -846,7 +792,10 @@ document.querySelector('.certificates-container').addEventListener('mouseenter',
 document.querySelector('.certificates-container').addEventListener('mouseleave', () => {
     certInterval = setInterval(() => showCertificate('next'), 5000);
 });
-//<!-- JavaScript for Hamburger Menu Toggle -->
+    
+    </script>
+<!-- JavaScript for Hamburger Menu Toggle -->
+<script>
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navbarLinks = document.querySelector('.navbar-links');
@@ -856,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-        
-    </script>
+</script>
+    
 </body>
 </html>
